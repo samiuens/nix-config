@@ -19,6 +19,8 @@ in
       platform = "x86_64-linux";
       timeZone = defaults.timeZone;
 
+      desktopGui = "gnome";
+
       # Modules
       coreModules = defaults.coreModules;
     };

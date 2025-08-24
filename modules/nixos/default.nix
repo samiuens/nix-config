@@ -15,6 +15,9 @@ in
     # Flake imports
     inputs.home-manager.nixosModules.home-manager
 
+    # Desktop GUI
+    ./gui/${hostConfig.desktopGui}
+
     # Users
     ./users/samiuensay.nix
   ];

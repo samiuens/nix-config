@@ -1,8 +1,15 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  hostConfig,
+  ...
+}:
 let
   userName = "samiuensay";
 in
 {
+  imports = [ ] ++ lib.optional pkgs.stdenv.isLinux ./gui/${hostConfig.desktopGui};
+
   home = {
     username = userName;
     homeDirectory = lib.mkDefault [
