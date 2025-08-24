@@ -3,10 +3,19 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    inputs@{ self, nixpkgs }:
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+    }:
     let
       config = import ./configuration.nix;
       nixHostNames = [
