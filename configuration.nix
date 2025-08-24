@@ -6,13 +6,14 @@ let
       "boot"
       "locale"
       "networking"
+      "nix"
+      "pkgs"
       "printing"
       "time"
     ];
   };
 in
 {
-
   hosts = {
     "smi-nixos" = {
       platform = "x86_64-linux";
