@@ -8,13 +8,19 @@
   outputs =
     inputs@{ self, nixpkgs }:
     let
+      config = import ./configuration.nix;
       nixHostNames = [
         "smi-nixos"
       ];
       mkNixHost =
         name:
         nixpkgs.lib.nixosSystem {
-          modules = [ ];
+          specialArgs = {
+            inherit inputs;
+            hostname = name;
+            hostConfig = config.hosts."${name}";
+          };
+          modules = [ ./modules/nixos ];
         };
     in
     {
