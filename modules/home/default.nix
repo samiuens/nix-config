@@ -8,7 +8,7 @@ let
   userName = "samiuensay";
 in
 {
-  imports = [ ] ++ lib.optional pkgs.stdenv.isLinux ./gui/${hostConfig.desktopGui};
+  imports = [ ] ++ (if pkgs.stdenv.isLinux then [ ./gui/${hostConfig.desktopGui} ] else [ ]);
 
   home = {
     username = userName;

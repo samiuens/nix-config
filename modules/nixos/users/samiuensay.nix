@@ -1,3 +1,9 @@
+{
+  pkgs,
+  lib,
+  hostConfig,
+  ...
+}:
 let
   userName = "samiuensay";
 in
@@ -14,7 +20,13 @@ in
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.${userName} = import ../../home;
+    users.${userName} = import ../../home {
+      inherit
+        pkgs
+        lib
+        hostConfig
+        ;
+    };
     backupFileExtension = "hm-backup";
   };
 }
