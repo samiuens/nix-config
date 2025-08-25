@@ -12,7 +12,7 @@
       '';
 
       shellAliases = {
-        config = "cd ~/nixos-config && just $1";
+        config = "cd ~/nix-config && just $1";
       };
 
       oh-my-zsh = {
