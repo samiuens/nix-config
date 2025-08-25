@@ -6,7 +6,7 @@
 }:
 let
   userName = "samiuensay";
-  applicationModules = map (name: ./applications/${name}/default.nix) hostConfig.applications;
+  applicationModules = map (name: ./applications/${name}/default.nix) hostConfig.homeApplications;
 in
 {
   imports =
