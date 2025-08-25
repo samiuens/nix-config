@@ -11,10 +11,13 @@ in
   users.users."${userName}" = {
     isNormalUser = true;
     description = "Sami Arda Ünsay";
+    home = "/home/${userName}";
     extraGroups = [
       "networkmanager"
       "wheel"
     ];
+    shell = pkgs.zsh;
+    ignoreShellProgramCheck = true; # quirk due to nix not detecting shell configuration via hm
   };
 
   home-manager = {
