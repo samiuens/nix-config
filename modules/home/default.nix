@@ -14,6 +14,7 @@ in
   imports =
     [ ]
     ++ applicationModules
+    ++ configurationModules
     ++ (if pkgs.stdenv.isLinux then [ ./gui/${hostConfig.desktopGui} ] else [ ]);
 
   home = {
