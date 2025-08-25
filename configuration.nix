@@ -7,6 +7,7 @@ let
       "locale"
       "networking"
       "nix"
+      "overlays"
       "pkgs"
       "printing"
       "time"
@@ -23,6 +24,7 @@ in
 
       # Modules
       coreModules = defaults.coreModules;
+      applications = [ "vscodium" ];
     };
   };
 }

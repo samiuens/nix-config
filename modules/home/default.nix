@@ -6,9 +6,13 @@
 }:
 let
   userName = "samiuensay";
+  applicationModules = map (name: ./applications/${name}/default.nix) hostConfig.applications;
 in
 {
-  imports = [ ] ++ (if pkgs.stdenv.isLinux then [ ./gui/${hostConfig.desktopGui} ] else [ ]);
+  imports =
+    [ ]
+    ++ applicationModules
+    ++ (if pkgs.stdenv.isLinux then [ ./gui/${hostConfig.desktopGui} ] else [ ]);
 
   home = {
     username = userName;
