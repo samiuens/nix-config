@@ -24,7 +24,7 @@ in
 
       # Modules
       coreModules = defaults.coreModules;
-      systemApplications = [ "1password" ];
+      systemApplications = [ "onepassword" ];
       homeApplications = [ "vscodium" ];
     };
   };
