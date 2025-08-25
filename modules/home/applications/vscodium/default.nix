@@ -16,6 +16,7 @@
           "yzhang.markdown-all-in-one"
           "jnoortheen.nix-ide"
         ];
+
         userSettings = {
           # Files
           "files.autoSave" = "afterDelay";
@@ -26,6 +27,7 @@
 
           # Editor
           "editor.fontSize" = 18;
+          "editor.lineHeight" = 1.5;
           "editor.fontFamily" = "'JetBrains Mono'";
           "editor.cursorStyle" = "line-thin";
           "editor.smoothScrolling" = true;
