@@ -13,7 +13,6 @@ shared-packages
   # E
 
   # F
-  firefox
 
   # G
   git
