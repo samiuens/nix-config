@@ -34,7 +34,11 @@ in
       ];
 
       # Configurations
-      homeConfigurations = [ "zsh" ];
+      homeConfigurations = [
+        "zsh"
+        "git"
+        "ssh"
+      ];
     };
   };
 }
