@@ -29,6 +29,7 @@ in
       systemApplications = [ "onepassword" ];
       homeApplications = [
         "firefox"
+        "kitty"
         "vscodium"
       ];
 
