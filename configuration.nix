@@ -24,11 +24,16 @@ in
 
       # Modules
       coreModules = defaults.coreModules;
+
+      # Applications
       systemApplications = [ "onepassword" ];
       homeApplications = [
         "firefox"
         "vscodium"
       ];
+
+      # Configurations
+      homeConfigurations = [ "zsh" ];
     };
   };
 }
