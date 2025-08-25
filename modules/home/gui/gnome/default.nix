@@ -1,4 +1,6 @@
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [ dconf-editor ];
   dconf = {
     enable = true;
     settings = {
