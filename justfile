@@ -6,9 +6,9 @@ default:
 deploy method='switch':
   #!/usr/bin/env sh
   if [ "$(uname)" == "Darwin" ]; then
-    sudo darwin-rebuild {{method}} --flake ".#"
+    sudo darwin-rebuild {{method}} --flake ".#" --show-trace
   else
-    sudo nixos-rebuild {{method}} --flake ".#"
+    sudo nixos-rebuild {{method}} --flake ".#" --show-trace
   fi
 
 # Update nix flakes
