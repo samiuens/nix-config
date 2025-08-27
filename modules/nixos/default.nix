@@ -24,5 +24,6 @@ in
       # Users
       ./users/samiuensay.nix
     ]
-    ++ applicationModules;
+    ++ applicationModules
+    ++ (if hostConfig.enableDocker then [ ./virtualisation/docker.nix ] else [ ]);
 }

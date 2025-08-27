@@ -16,9 +16,10 @@ in
     extraGroups = [
       "networkmanager"
       "wheel"
-    ];
+    ]
+    ++ lib.optionals hostConfig.enableDocker [ "docker" ];
     shell = pkgs.zsh;
-    ignoreShellProgramCheck = true; # quirk due to nix not detecting shell configuration via hm
+    ignoreShellProgramCheck = true;
   };
 
   home-manager = {
