@@ -5,12 +5,13 @@
   ...
 }:
 let
-  userName = "samiuensay";
+  userOptions = hostConfig.users."samiuensay";
+  userName = userOptions.username;
 in
 {
   users.users."${userName}" = {
     isNormalUser = true;
-    description = "Sami Arda Ünsay";
+    description = userOptions.description;
     home = "/home/${userName}";
     extraGroups = [
       "networkmanager"
@@ -23,11 +24,12 @@ in
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.${userName} = import ../../home {
+    users.${userName} = import ../../home/${userName}.nix {
       inherit
         pkgs
         lib
         hostConfig
+        userOptions
         ;
     };
     backupFileExtension = "hm-backup";

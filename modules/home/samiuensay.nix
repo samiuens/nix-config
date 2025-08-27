@@ -2,13 +2,13 @@
   pkgs,
   lib,
   hostConfig,
+  userOptions,
   ...
 }:
 let
-  userName = "samiuensay";
-  applicationModules = map (name: ./applications/${name}/default.nix) hostConfig.homeApplications;
-  configurationModules = map (
-    name: ./configurations/${name}/default.nix) hostConfig.homeConfigurations;
+  userName = userOptions.username;
+  applicationModules = map (name: ./applications/${name}/default.nix) userOptions.applications;
+  configurationModules = map (name: ./configurations/${name}/default.nix) userOptions.configurations;
 in
 {
   imports =
@@ -24,7 +24,7 @@ in
       (lib.mkIf pkgs.stdenv.isDarwin "/Users/${userName}")
     ];
     packages = pkgs.callPackage (
-      if pkgs.stdenv.isDarwin then ../../pkgs/macos.nix else ../../pkgs/nixos.nix
+      if pkgs.stdenv.isDarwin then ../../pkgs/${userName}/macos.nix else ../../pkgs/${userName}/nixos.nix
     ) { };
     stateVersion = "25.05";
   };

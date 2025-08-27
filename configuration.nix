@@ -12,6 +12,22 @@ let
       "printing"
       "time"
     ];
+    users = {
+      "samiuensay" = {
+        username = "samiuensay";
+        description = "Sami Arda Ünsay";
+        applications = [
+          "firefox"
+          "kitty"
+          "vscodium"
+        ];
+        configurations = [
+          "zsh"
+          "git"
+          "ssh"
+        ];
+      };
+    };
   };
 in
 {
@@ -22,23 +38,12 @@ in
 
       desktopGui = "gnome";
 
-      # Modules
+      # Systemwide
       coreModules = defaults.coreModules;
-
-      # Applications
       systemApplications = [ "onepassword" ];
-      homeApplications = [
-        "firefox"
-        "kitty"
-        "vscodium"
-      ];
 
-      # Configurations
-      homeConfigurations = [
-        "zsh"
-        "git"
-        "ssh"
-      ];
+      # Users
+      users = defaults.users;
     };
   };
 }
