@@ -25,6 +25,7 @@ in
       # Systemwide
       coreModules = defaults.coreModules;
       systemApplications = [ "onepassword" ];
+      systemServices = [ "tailscale" ];
       enableDocker = true;
 
       # Users
@@ -44,7 +45,6 @@ in
           ];
           services = [
             "syncthing"
-            "tailscale"
           ];
         };
       };

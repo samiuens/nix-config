@@ -7,6 +7,7 @@
 let
   coreModules = map (name: ./core/${name}.nix) hostConfig.coreModules;
   applicationModules = map (name: ./applications/${name}/default.nix) hostConfig.systemApplications;
+  serviceModules = map (name: ./services/${name}/default.nix) hostConfig.systemServices;
 in
 {
   imports =
