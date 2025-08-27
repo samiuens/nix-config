@@ -19,12 +19,18 @@ let
     configDir = ./configurations;
     username = userName;
   };
+  serviceModules = moduleHelper {
+    moduleConfig = userOptions.services;
+    configDir = ./services;
+    username = userName;
+  };
 in
 {
   imports =
     [ ]
     ++ applicationModules
     ++ configurationModules
+    ++ serviceModules
     ++ (if pkgs.stdenv.isLinux then [ ./gui/${hostConfig.desktopGui} ] else [ ]);
 
   home = {

@@ -12,22 +12,6 @@ let
       "printing"
       "time"
     ];
-    users = {
-      "samiuensay" = {
-        username = "samiuensay";
-        description = "Sami Arda Ünsay";
-        applications = [
-          "firefox"
-          "kitty"
-          "vscodium"
-        ];
-        configurations = [
-          "zsh"
-          "git"
-          "ssh"
-        ];
-      };
-    };
   };
 in
 {
@@ -41,9 +25,29 @@ in
       # Systemwide
       coreModules = defaults.coreModules;
       systemApplications = [ "onepassword" ];
+      enableDocker = true;
 
       # Users
-      users = defaults.users;
+      users = {
+        "samiuensay" = {
+          username = "samiuensay";
+          description = "Sami Arda Ünsay";
+          applications = [
+            "firefox"
+            "kitty"
+            "vscodium"
+          ];
+          configurations = [
+            "zsh"
+            "git"
+            "ssh"
+          ];
+          services = [
+            "syncthing"
+            "tailscale"
+          ];
+        };
+      };
     };
   };
 }
