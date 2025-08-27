@@ -7,8 +7,18 @@
 }:
 let
   userName = userOptions.username;
-  applicationModules = map (name: ./applications/${name}/default.nix) userOptions.applications;
-  configurationModules = map (name: ./configurations/${name}/default.nix) userOptions.configurations;
+  moduleHelper = import ../../lib/homeModuleHelper.nix;
+  # Module imports
+  applicationModules = moduleHelper {
+    moduleConfig = userOptions.applications;
+    configDir = ./applications;
+    username = userName;
+  };
+  configurationModules = moduleHelper {
+    moduleConfig = userOptions.configurations;
+    configDir = ./configurations;
+    username = userName;
+  };
 in
 {
   imports =
