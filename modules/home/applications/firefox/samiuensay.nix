@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  hostname,
   ...
 }:
 {
@@ -37,6 +38,7 @@
     profiles.samiuensay =
       let
         profileSettings = {
+          "identity.fxaccounts.account.device.name" = hostname;
           "sidebar.revamp" = true;
           "sidebar.verticalTabs" = true;
           "sidebar.main.tools" = "syncedtabs,history,bookmarks";

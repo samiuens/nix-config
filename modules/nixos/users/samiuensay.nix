@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  hostname,
   hostConfig,
   ...
 }:
@@ -29,6 +30,14 @@ in
       inherit
         pkgs
         lib
+        hostname
+        hostConfig
+        userOptions
+        ;
+    };
+    extraSpecialArgs = {
+      inherit
+        hostname
         hostConfig
         userOptions
         ;
