@@ -10,6 +10,7 @@ let
       "overlays"
       "pkgs"
       "printing"
+      "security"
       "time"
     ];
     guis = {
