@@ -24,7 +24,10 @@ in
 
       # Systemwide
       coreModules = defaults.coreModules;
-      systemApplications = [ "onepassword" ];
+      systemApplications = [
+        "onepassword"
+        "coolercontrol"
+      ];
       systemServices = [
         "tailscale"
         "localsend"
