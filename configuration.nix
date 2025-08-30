@@ -56,6 +56,7 @@ in
             "kitty"
             "nextcloud"
             "obsidian"
+            "rofi"
             "vscodium"
           ];
           configurations = [
