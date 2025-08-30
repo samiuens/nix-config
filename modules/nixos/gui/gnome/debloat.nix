@@ -14,5 +14,7 @@
     snapshot
     geary
     simple-scan
+    totem
+    decibels
   ];
 }
