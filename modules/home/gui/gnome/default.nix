@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
+  imports = [ ./extensions.nix ];
   home.packages = with pkgs; [ dconf-editor ];
+
   dconf = {
     enable = true;
     settings = {

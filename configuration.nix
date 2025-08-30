@@ -12,6 +12,15 @@ let
       "printing"
       "time"
     ];
+    guis = {
+      "gnome" = {
+        extensions = [
+          "blur-my-shell"
+          "pano"
+          "open-bar"
+        ];
+      };
+    };
   };
 in
 {
@@ -59,6 +68,9 @@ in
           ];
         };
       };
+
+      # GUIs
+      guis = defaults.guis;
     };
   };
 }
