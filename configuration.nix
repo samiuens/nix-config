@@ -25,7 +25,10 @@ in
       # Systemwide
       coreModules = defaults.coreModules;
       systemApplications = [ "onepassword" ];
-      systemServices = [ "tailscale" ];
+      systemServices = [
+        "tailscale"
+        "localsend"
+      ];
       enableDocker = true;
 
       # Users
@@ -35,7 +38,10 @@ in
           description = "Sami Arda Ünsay";
           applications = [
             "firefox"
+            "keepassxc"
             "kitty"
+            "nextcloud"
+            "obsidian"
             "vscodium"
           ];
           configurations = [
