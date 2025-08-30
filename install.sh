@@ -10,8 +10,15 @@ input() {
 clone() {
     repo_name="nix-config"
     repo_url="https://github.com/samiuens/$repo_name.git"
-
+    
     echo ""
+
+    # check if repo already exists
+    if [ -d "$HOME/$repo_name/" ]; then
+      echo "git repo already exists."
+      return 0
+    fi
+
     echo "> setting up git repo..."
     if [ "$(uname)" == "Darwin" ]; then
         nix shell nixpkgs#git --command git clone $repo_url ~/$repo_name
