@@ -28,6 +28,7 @@ in
   hosts = {
     "smi-nixos" = {
       platform = "x86_64-linux";
+      dualBoot = true;
       timeZone = defaults.timeZone;
 
       desktopGui = "gnome";
