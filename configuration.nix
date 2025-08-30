@@ -40,6 +40,7 @@ in
           username = "samiuensay";
           description = "Sami Arda Ünsay";
           applications = [
+            "cider"
             "firefox"
             "keepassxc"
             "kitty"
