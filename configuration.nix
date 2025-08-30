@@ -42,6 +42,7 @@ in
           applications = [
             "cider"
             "firefox"
+            "flameshot"
             "keepassxc"
             "kitty"
             "nextcloud"
