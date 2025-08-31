@@ -57,7 +57,6 @@ in
             "keepassxc"
             "kitty"
             "nextcloud"
-            "obsidian"
             "rofi"
             "vscodium"
           ];
