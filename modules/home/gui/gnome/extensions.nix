@@ -16,7 +16,7 @@ in
           "1Password"
           "KeePassXC"
         ];
-        global-shortcut = [ "<Shift><Control>v" ];
+        global-shortcut = [ "<Control><Super>v" ];
         history-length = 50;
         play-audio-on-copy = false;
         send-notification-on-copy = false;
