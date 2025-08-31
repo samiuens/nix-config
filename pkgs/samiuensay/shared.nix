@@ -8,7 +8,10 @@ with pkgs;
   # D
   # E
   # F
+
   # G
+  gitkraken
+
   # H
   # I
   # J
@@ -16,7 +19,10 @@ with pkgs;
   # L
   # M
   # N
+
   # O
+  obsidian
+
   # P
   # Q
   # R
@@ -26,6 +32,10 @@ with pkgs;
   # V
   # W
   # X
+
   # Y
+  yubioath-flutter
+
   # Z
+  zotero
 ]

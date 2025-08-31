@@ -57,7 +57,6 @@ in
             "keepassxc"
             "kitty"
             "nextcloud"
-            "rofi"
             "vscodium"
           ];
           configurations = [
