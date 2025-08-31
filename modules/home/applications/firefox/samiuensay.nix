@@ -11,7 +11,6 @@
       (lib.mkIf pkgs.stdenv.isLinux pkgs.firefox)
       (lib.mkIf pkgs.stdenv.isDarwin null)
     ];
-
     policies = {
       ExtensionSettings =
         with builtins;
@@ -28,7 +27,8 @@
           # shortId: firefox extension store url;
           # extensionId: get by visiting "about:debugging#/runtime/this-firefox";
           (extension "ublock-origin" "uBlock0@raymondhill.net")
-          (extension "1password-x-password-manager" "{d634138d-c276-4fc8-924b-40a0ea21d284}")
+          (extension "keepassxc-browser" "keepassxc-browser@keepassxc.org")
+          (extension "bitwarden-password-manager" "{446900e4-71c2-419f-a6a7-df9c091e268b}")
           (extension "vimium-ff" "{d7742d87-e61d-4b78-b8a1-b469842139fa}")
           (extension "clearurls" "{74145f27-f039-47ce-a470-a662b129930a}")
           (extension "sponsorblock" "sponsorBlocker@ajay.app")
