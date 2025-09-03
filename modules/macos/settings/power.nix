@@ -1,6 +1,6 @@
 {
   power.sleep.display = 3;
-  screensaver = {
+  system.defaults.screensaver = {
     askForPassword = true;
     askForPasswordDelay = 0;
   };
