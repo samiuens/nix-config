@@ -21,9 +21,9 @@ clone() {
 
     echo "> setting up git repo..."
     if [ "$(uname)" == "Darwin" ]; then
-        nix shell nixpkgs#git --command git clone $repo_url ~/$repo_name
-    elif [ -f /etc/NIXOS ]; then
         git clone $repo_url ~/$repo_name
+    elif [ -f /etc/NIXOS ]; then
+      nix shell nixpkgs#git --command git clone $repo_url ~/$repo_name
     fi
     echo "cloned repo into home directory (under ~/$repo_name)"
     cd ~/$repo_name
