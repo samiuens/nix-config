@@ -65,9 +65,11 @@ in
         "samiuensay" = {
           description = "Sami Arda Ünsay";
           applications = [
+            "aerospace"
             "firefox"
             "keepassxc"
             "kitty"
+            "linearmouse"
             "vscodium"
           ];
           configurations = [
