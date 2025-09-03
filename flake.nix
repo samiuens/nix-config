@@ -4,10 +4,17 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
     nix4vscode = {
       url = "github:nix-community/nix4vscode";
@@ -19,13 +26,18 @@
     inputs@{
       self,
       nixpkgs,
+      nix-darwin,
       home-manager,
+      nix-homebrew,
       nix4vscode,
     }:
     let
       config = import ./configuration.nix;
       nixHostNames = [
         "smi-nixos"
+      ];
+      macHostNames = [
+        "smi-mac"
       ];
       mkNixHost =
         name:
@@ -37,6 +49,16 @@
           };
           modules = [ ./modules/nixos ];
         };
+      mkMacHost =
+        name:
+        nix-darwin.lib.darwinSystem {
+          specialArgs = {
+            inherit inputs;
+            hostname = name;
+            hostConfig = config.hosts."${name}";
+          };
+          modules = [ ./modules/macos ];
+        };
     in
     {
       nixosConfigurations = builtins.listToAttrs (
@@ -44,6 +66,12 @@
           inherit name;
           value = mkNixHost name;
         }) nixHostNames
+      );
+      darwinConfigurations = builtins.listToAttrs (
+        map (name: {
+          inherit name;
+          value = mkMacHost name;
+        }) macHostNames
       );
     };
 }
