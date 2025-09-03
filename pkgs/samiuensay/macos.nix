@@ -7,10 +7,9 @@ in
 shared-packages
 ++ [
   # A
-  anki
 
   # B
-  bitwarden
+  betterdisplay
 
   # C
   # D
@@ -18,16 +17,16 @@ shared-packages
   # F
   # G
   # H
+
   # I
+  ice-bar
+
   # J
   # K
   # L
   # M
   # N
-
   # O
-  obsidian
-
   # P
   # Q
   # R
@@ -37,10 +36,6 @@ shared-packages
   # V
   # W
   # X
-
   # Y
-  yubioath-flutter
-
   # Z
-  zettlr
 ]
