@@ -18,6 +18,7 @@
     enable = true;
     enableRosetta = if (hostConfig.platform == "aarch64-darwin") then true else false;
     user = "${hostConfig.users."samiuensay".username}";
+    autoMigrate = true;
     mutableTaps = true;
   };
 }
