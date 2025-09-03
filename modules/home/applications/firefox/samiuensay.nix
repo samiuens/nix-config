@@ -5,7 +5,7 @@
   ...
 }:
 {
-  imports = lib.optional pkgs.stdenv.isDarwin ./macos-hotfix.nix;
+  imports = lib.optionals pkgs.stdenv.isDarwin [ ./macos-hotfix.nix ];
 
   programs.firefox = {
     enable = true;
