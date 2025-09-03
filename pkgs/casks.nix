@@ -1,5 +1,8 @@
 _: [
+  "1password"
+
   # A
+  "aldente"
   "anki"
 
   # B
@@ -28,13 +31,17 @@ _: [
   "microsoft-powerpoint"
 
   # N
+  "nextcloud"
 
   # O
   "obsidian"
 
   # P
   # Q
+
   # R
+  "raycast"
+
   # S
 
   # T
