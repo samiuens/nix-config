@@ -9,7 +9,10 @@ _: [
 
   # D
   # E
+
   # F
+  "firefox"
+
   # G
   # H
   # I

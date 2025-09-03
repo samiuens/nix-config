@@ -2,10 +2,11 @@
   pkgs,
   lib,
   hostname,
+  hostConfig,
   ...
 }:
 {
-  imports = lib.optionals pkgs.stdenv.isDarwin [ ./macos-hotfix.nix ];
+  imports = lib.optional (hostConfig.platform == "aarch64-darwin") ./macos-hotfix.nix;
 
   programs.firefox = {
     enable = true;
