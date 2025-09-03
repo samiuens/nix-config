@@ -1,0 +1,3 @@
+{
+  system.startup.chime = false;
+}
