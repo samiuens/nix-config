@@ -15,6 +15,7 @@
           "seatonjiang.gitmoji-vscode"
           "yzhang.markdown-all-in-one"
           "jnoortheen.nix-ide"
+          "opentofu.vscode-opentofu"
         ];
 
         userSettings = {
