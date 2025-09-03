@@ -7,7 +7,7 @@ in
 shared-packages
 ++ [
   # A
-  anki
+  # anki
 
   # B
   bitwarden
