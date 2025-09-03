@@ -23,7 +23,7 @@ in
       ./gui/${hostConfig.desktopGui}
 
       # Users
-      ./users/samiuensay.nix
+      ./users
     ]
     ++ applicationModules
     ++ serviceModules

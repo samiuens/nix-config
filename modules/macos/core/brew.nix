@@ -17,7 +17,7 @@
   nix-homebrew = {
     enable = true;
     enableRosetta = if (hostConfig.platform == "aarch64-darwin") then true else false;
-    user = "${hostConfig.users."samiuensay".username}";
+    user = builtins.head (builtins.attrNames hostConfig.users);
     autoMigrate = true;
     mutableTaps = true;
   };

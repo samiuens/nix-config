@@ -2,11 +2,11 @@
   pkgs,
   lib,
   hostConfig,
+  userName,
   userOptions,
   ...
 }:
 let
-  userName = userOptions.username;
   moduleHelper = import ../../lib/homeModuleHelper.nix;
   # Module imports
   applicationModules = moduleHelper {

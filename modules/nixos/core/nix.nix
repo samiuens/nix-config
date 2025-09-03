@@ -5,7 +5,7 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-    settings.trusted-users = [ "${hostConfig.users."samiuensay".username}" ];
+    settings.trusted-users = builtins.attrNames hostConfig.users;
     optimise = {
       automatic = true;
       dates = [ "daily" ];

@@ -63,14 +63,11 @@ in
 
       users = {
         "samiuensay" = {
-          username = "samiuensay";
           description = "Sami Arda Ünsay";
           applications = [
             "firefox"
             "keepassxc"
             "kitty"
-            "mullvad-vpn"
-            "nextcloud"
             "vscodium"
           ];
           configurations = [
@@ -105,15 +102,14 @@ in
       # Users
       users = {
         "samiuensay" = {
-          username = "samiuensay";
           description = "Sami Arda Ünsay";
+          sudoPermission = true;
           applications = [
             "cider"
             "firefox"
             "flameshot"
             "keepassxc"
             "kitty"
-            "mullvad-vpn"
             "nextcloud"
             "vscodium"
           ];

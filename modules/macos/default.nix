@@ -11,20 +11,19 @@ let
   serviceModules = map (name: ./services/${name}/default.nix) hostConfig.systemServices;
 in
 {
-  imports =
-    [
-      # Host-specific configuration import
-      ../../hosts/${hostname}
+  imports = [
+    # Host-specific configuration import
+    ../../hosts/${hostname}
 
-      # Flake imports
-      inputs.home-manager.darwinModules.home-manager
-      inputs.nix-homebrew.darwinModules.nix-homebrew
+    # Flake imports
+    inputs.home-manager.darwinModules.home-manager
+    inputs.nix-homebrew.darwinModules.nix-homebrew
 
-      # Users
-      ./users/samiuensay.nix
-    ]
-    ++ coreModules
-    ++ settingModules
-    ++ applicationModules
-    ++ serviceModules;
+    # Users
+    ./users
+  ]
+  ++ coreModules
+  ++ settingModules
+  ++ applicationModules
+  ++ serviceModules;
 }
