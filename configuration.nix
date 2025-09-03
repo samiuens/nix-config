@@ -65,9 +65,20 @@ in
         "samiuensay" = {
           username = "samiuensay";
           description = "Sami Arda Ünsay";
-          applications = [ ];
-          configurations = [ ];
-          services = [ ];
+          applications = [
+            "firefox"
+            "keepassxc"
+            "kitty"
+            "mullvad-vpn"
+            "nextcloud"
+            "vscodium"
+          ];
+          configurations = [
+            "zsh"
+            "git"
+            "ssh"
+          ];
+          services = [ "syncthing" ];
         };
       };
     };
@@ -102,6 +113,7 @@ in
             "flameshot"
             "keepassxc"
             "kitty"
+            "mullvad-vpn"
             "nextcloud"
             "vscodium"
           ];
