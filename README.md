@@ -4,9 +4,10 @@ This repository contains the nix configuration, to automate the setup of my loca
 
 ## 🤖 Inventory
 
-|  hostname   |         system          |         cpu         |  ram  |         gpu          | role  |  os   | status |
-| :---------: | :---------------------: | :-----------------: | :---: | :------------------: | :---: | :---: | :----: |
-| `smi-nixos` | [Prime B550M-A (Wi-Fi)] | [AMD Ryzen 7 2700X] | 32GB  | [XFX Radeon RX 6600] |   🖥️   |   ❄️   |   ✅    |
+|  hostname   |            system            |         cpu         |  ram  |         gpu          | role  |  os   | status |
+| :---------: | :--------------------------: | :-----------------: | :---: | :------------------: | :---: | :---: | :----: |
+| `smi-nixos` |   [Prime B550M-A (Wi-Fi)]    | [AMD Ryzen 7 2700X] | 32GB  | [XFX Radeon RX 6600] |   🖥️   |   ❄️   |   ✅    |
+|  `smi-mac`  | [MacBook Pro M1 (13", 2020)] |      Apple M1       |  8GB  |       Apple M1       |   💻   |   🍏   |   ✅    |
 
 ## 📘 Overview
 My personal machines run either [NixOS] or macOS in combination with [nix-darwin], managed and maintained using this nix configuration.
@@ -80,9 +81,11 @@ This project is licensed under the terms of the [MIT license](https://github.com
 
 _[...]_
 
+
 [Prime B550M-A (Wi-Fi)]: https://www.asus.com/us/motherboards-components/motherboards/prime/prime-b550m-a-wi-fi/
 [AMD Ryzen 7 2700X]: https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-2000-series/amd-ryzen-7-2700x.html
 [XFX Radeon RX 6600]: https://www.xfxforce.com/shop/xfx-speedster-swft-210-amd-radeon-tm-rx-6600-core
+[MacBook Pro M1 (13", 2020)]: https://support.apple.com/en-us/111893
 [NixOS]: https://nixos.org
 [home-manager]: https://github.com/nix-community/home-manager
 [nix-darwin]: https://github.com/nix-darwin/nix-darwin/tree/master
