@@ -5,12 +5,15 @@
   ...
 }:
 {
+  imports = lib.optional pkgs.stdenv.isDarwin ./macos-hotfix.nix;
+
   programs.firefox = {
     enable = true;
     package = lib.mkMerge [
       (lib.mkIf pkgs.stdenv.isLinux pkgs.firefox)
       (lib.mkIf pkgs.stdenv.isDarwin null)
     ];
+
     policies = {
       ExtensionSettings =
         with builtins;
@@ -201,6 +204,13 @@
         id = 0;
         name = "samiuensay";
         isDefault = true;
+        bookmarks = [
+          {
+            name = "Proton Mail";
+            url = "https://mail.proton.me";
+            keyword = "";
+          }
+        ];
         settings = profileSettings;
         search = {
           default = "ddg";
