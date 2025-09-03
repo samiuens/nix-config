@@ -1,31 +1,77 @@
 let
   defaults = {
     timeZone = "Europe/Berlin";
-    coreModules = [
-      "audio"
-      "boot"
-      "locale"
-      "networking"
-      "nix"
-      "overlays"
-      "pkgs"
-      "printing"
-      "security"
-      "time"
-    ];
-    guis = {
-      "gnome" = {
-        extensions = [
-          "blur-my-shell"
-          "pano"
-          "open-bar"
-        ];
+    nixos = {
+      coreModules = [
+        "audio"
+        "boot"
+        "locale"
+        "networking"
+        "nix"
+        "overlays"
+        "pkgs"
+        "printing"
+        "security"
+        "time"
+      ];
+      guis = {
+        "gnome" = {
+          extensions = [
+            "blur-my-shell"
+            "pano"
+            "open-bar"
+          ];
+        };
       };
+    };
+    macos = {
+      coreModules = [
+        "brew"
+        "fonts"
+        "nix"
+        "overlays"
+        "pkgs"
+        "time"
+      ];
+      settingModules = [
+        "appearance"
+        "audio"
+        "custom"
+        "desktop"
+        "dock"
+        "finder"
+        "input"
+        "loginwindow"
+        "networking"
+        "power"
+        "security"
+      ];
     };
   };
 in
 {
   hosts = {
+    "smi-mac" = {
+      platform = "aarch64-darwin";
+      timeZone = defaults.timeZone;
+
+      # Systemwide
+      coreModules = defaults.macos.coreModules;
+      settingModules = defaults.macos.settingModules;
+      systemApplications = [ ];
+      systemServices = [ ];
+
+      users = {
+        "samiuensay" = {
+          username = "samiuensay";
+          description = "Sami Arda Ünsay";
+          applications = [ ];
+          configurations = [ ];
+          services = [ ];
+        };
+      };
+    };
+
     "smi-nixos" = {
       platform = "x86_64-linux";
       dualBoot = true;
@@ -34,7 +80,7 @@ in
       desktopGui = "gnome";
 
       # Systemwide
-      coreModules = defaults.coreModules;
+      coreModules = defaults.nixos.coreModules;
       systemApplications = [
         "onepassword"
         "coolercontrol"
@@ -71,7 +117,7 @@ in
       };
 
       # GUIs
-      guis = defaults.guis;
+      guis = defaults.nixos.guis;
     };
   };
 }
