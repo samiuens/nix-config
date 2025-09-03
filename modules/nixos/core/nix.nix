@@ -1,10 +1,11 @@
+{ hostConfig, ... }:
 {
   nix = {
     enable = true;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-    settings.trusted-users = [ "samiuensay" ];
+    settings.trusted-users = [ "${hostConfig.users."samiuensay".username}" ];
     optimise = {
       automatic = true;
       dates = [ "daily" ];
