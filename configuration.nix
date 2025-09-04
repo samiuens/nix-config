@@ -81,9 +81,15 @@ in
         };
         "samiarda" = {
           description = "samiarda (Work)";
-          applications = [ "aerospace" "kitty" "linearmouse" ];
+          applications = [
+            "aerospace"
+            "firefox"
+            "kitty"
+            "linearmouse"
+            "vscodium"
+          ];
           configurations = [ "zsh" ];
-          services = [];
+          services = [ ];
         };
       };
     };
