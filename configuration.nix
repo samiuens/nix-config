@@ -79,6 +79,12 @@ in
           ];
           services = [ "syncthing" ];
         };
+        "samiarda" = {
+          description = "samiarda (Work)";
+          applications = [ "aerospace" "kitty" "linearmouse" ];
+          configurations = [ "zsh" ];
+          services = [];
+        };
       };
     };
 

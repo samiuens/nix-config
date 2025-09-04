@@ -43,6 +43,7 @@ _: [
   "raycast"
 
   # S
+  "signal"
 
   # T
   "tailscale-app"
