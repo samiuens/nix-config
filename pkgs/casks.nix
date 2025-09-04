@@ -11,6 +11,8 @@ _: [
   "cleanshot"
 
   # D
+  "docker"
+
   # E
 
   # F
@@ -49,6 +51,8 @@ _: [
   "tailscale-app"
 
   # U
+  "ungoogled-chromium"
+
   # V
   # W
   # X
