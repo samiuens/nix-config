@@ -10,14 +10,19 @@
       cleanup = "zap";
     };
     taps = [ ];
-    brews = [ ];
+    brews = [
+      "podman"
+    ];
     casks = pkgs.callPackage ../../../pkgs/casks.nix { };
+    masApps = {
+      "Bitwarden" = 1352778147;
+    };
   };
 
   nix-homebrew = {
     enable = true;
     enableRosetta = if (hostConfig.platform == "aarch64-darwin") then true else false;
-    user = builtins.head (builtins.attrNames hostConfig.users);
+    user = "samiuensay";
     autoMigrate = true;
     mutableTaps = true;
   };

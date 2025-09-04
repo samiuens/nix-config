@@ -13,7 +13,7 @@
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
   }) hostConfig.users;
-  system.primaryUser = builtins.head (builtins.attrNames hostConfig.users);
+  system.primaryUser = "samiuensay";
 
   home-manager = {
     useGlobalPkgs = true;
