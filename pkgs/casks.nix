@@ -11,7 +11,7 @@ _: [
   "cleanshot"
 
   # D
-  "docker"
+  "docker-desktop"
 
   # E
 
