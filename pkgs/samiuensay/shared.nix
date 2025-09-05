@@ -17,6 +17,8 @@ with pkgs;
   # I
 
   # J
+  jdk24
+  jetbrains.idea-ultimate
   just
 
   # K
