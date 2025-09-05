@@ -17,6 +17,7 @@ _: [
 
   # F
   "firefox"
+  "filen"
 
   # G
   # H

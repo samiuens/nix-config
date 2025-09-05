@@ -15,7 +15,10 @@ shared-packages
   # C
   # D
   # E
+
   # F
+  filen-desktop
+
   # G
   # H
   # I

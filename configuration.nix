@@ -124,7 +124,6 @@ in
             "flameshot"
             "keepassxc"
             "kitty"
-            "nextcloud"
             "vscodium"
           ];
           configurations = [
