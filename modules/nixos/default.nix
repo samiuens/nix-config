@@ -8,6 +8,7 @@ let
   coreModules = map (name: ./core/${name}.nix) hostConfig.coreModules;
   applicationModules = map (name: ./applications/${name}/default.nix) hostConfig.systemApplications;
   serviceModules = map (name: ./services/${name}/default.nix) hostConfig.systemServices;
+  virtualisationModules = map (name: ./virtualisation/${name}.nix) hostConfig.virtualisation;
 in
 {
   imports =
@@ -27,5 +28,5 @@ in
     ]
     ++ applicationModules
     ++ serviceModules
-    ++ (if hostConfig.enableDocker then [ ./virtualisation/docker.nix ] else [ ]);
+    ++ virtualisationModules;
 }

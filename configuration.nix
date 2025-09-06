@@ -111,7 +111,11 @@ in
         "tailscale"
         "localsend"
       ];
-      enableDocker = true;
+
+      virtualisation = [
+        "docker"
+        "podman"
+      ];
 
       # Users
       users = {
@@ -134,6 +138,16 @@ in
           services = [
             "syncthing"
           ];
+        };
+        "samiarda" = {
+          description = "samiarda (Work)";
+          sudoPermission = false;
+          applications = [
+            "firefox"
+            "kitty"
+          ];
+          configurations = [ "zsh" ];
+          services = [ ];
         };
       };
 
