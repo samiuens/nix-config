@@ -146,7 +146,10 @@ in
             "firefox"
             "kitty"
           ];
-          configurations = [ "zsh" ];
+          configurations = [
+            "zsh"
+            "git"
+          ];
           services = [ ];
         };
       };
