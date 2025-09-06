@@ -205,14 +205,72 @@
         id = 0;
         name = "samiuensay";
         isDefault = true;
-        bookmarks = [
-          {
-            name = "Proton Mail";
-            url = "https://mail.proton.me";
-            keyword = "";
-          }
-        ];
         settings = profileSettings;
+        bookmarks = {
+          force = true;
+          settings = [
+            {
+              name = "Toolbar";
+              toolbar = true;
+              bookmarks = [
+                {
+                  name = "";
+                  url = "https://mail.proton.me";
+                }
+                {
+                  name = "";
+                  url = "https://ticktick.com/webapp";
+                }
+                {
+                  name = "";
+                  url = "https://calendar.google.com";
+                }
+                {
+                  name = "";
+                  url = "https://filen.io";
+                }
+                {
+                  name = "";
+                  url = "https://chatgpt.com";
+                }
+                {
+                  name = "";
+                  url = "https://gemini.google.com";
+                }
+                {
+                  name = "Infrastructure";
+                  bookmarks = [
+                    {
+                      name = "addy.io";
+                      url = "https://addy.io";
+                    }
+                    {
+                      name = "Cloudflare";
+                      url = "https://dash.cloudflare.com";
+                    }
+                    {
+                      name = "Hetzner";
+                      url = "https://accounts.hetzner.com";
+                    }
+                  ];
+                }
+                {
+                  name = "MyNixOS";
+                  url = "https://mynixos.com";
+                }
+              ];
+            }
+          ];
+        };
+        containers = {
+          personal = {
+            name = "Personal";
+            id = 0;
+            color = "blue";
+            icon = "circle";
+          };
+        };
+        containersForce = true;
         search = {
           default = "ddg";
           privateDefault = "ddg";
