@@ -20,6 +20,11 @@
       url = "github:nix-community/nix4vscode";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -30,6 +35,7 @@
       home-manager,
       nix-homebrew,
       nix4vscode,
+      zen-browser,
     }:
     let
       config = import ./configuration.nix;

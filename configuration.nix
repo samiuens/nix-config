@@ -129,6 +129,7 @@ in
             "keepassxc"
             "kitty"
             "vscodium"
+            "zen-browser"
           ];
           configurations = [
             "zsh"

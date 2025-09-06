@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   lib,
   hostname,
@@ -38,6 +39,7 @@
 
     extraSpecialArgs = {
       inherit
+        inputs
         hostname
         hostConfig
         ;
