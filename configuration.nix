@@ -144,7 +144,7 @@ in
           description = "samiarda (Work)";
           sudoPermission = false;
           applications = [
-            "firefox"
+            "chromium"
             "kitty"
           ];
           configurations = [
