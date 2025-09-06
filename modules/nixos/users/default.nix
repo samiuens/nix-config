@@ -13,7 +13,7 @@
     extraGroups = [
       "networkmanager"
     ]
-    ++ lib.optionals hostConfig.enableDocker [ "docker" ]
+    ++ lib.lists.optional (builtins.elem "docker" hostConfig.virtualisation) "docker"
     ++ lib.optionals userOptions.sudoPermission [ "wheel" ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
