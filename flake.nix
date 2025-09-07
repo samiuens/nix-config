@@ -14,6 +14,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland.url = "github:hyprwm/Hyprland";
+
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
     nix4vscode = {
@@ -33,6 +35,7 @@
       nixpkgs,
       nix-darwin,
       home-manager,
+      hyprland,
       nix-homebrew,
       nix4vscode,
       zen-browser,
