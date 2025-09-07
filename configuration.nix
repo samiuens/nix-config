@@ -99,7 +99,10 @@ in
       dualBoot = true;
       timeZone = defaults.timeZone;
 
-      desktopGui = "hyprland";
+      desktopGui = [
+        "hyprland"
+        "gnome"
+      ];
 
       # Systemwide
       coreModules = defaults.nixos.coreModules;
