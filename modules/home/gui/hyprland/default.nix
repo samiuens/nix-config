@@ -1,18 +1,25 @@
 { inputs, pkgs, ... }:
 let
-  moduleNames = [
+  configNames = [
+    "animations"
     "cursor"
+    "decoration"
+    "general"
     "input"
     "keybinds"
     "misc"
     "monitor"
     "variables"
   ];
-  moduleImports = map (name: ./${name}.nix) moduleNames;
+  pluginNames = [
+    "caelestia"
+    "hypridle"
+  ];
+  configImports = map (name: ./config/${name}.nix) configNames;
+  pluginImports = map (name: ./plugins/${name}.nix) pluginNames;
 in
 {
-  imports = moduleImports;
-
+  imports = configImports ++ pluginImports;
   wayland.windowManager.hyprland = {
     enable = true;
 

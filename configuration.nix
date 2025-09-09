@@ -5,6 +5,7 @@ let
       coreModules = [
         "audio"
         "boot"
+        "hardware"
         "locale"
         "networking"
         "nix"
@@ -128,7 +129,6 @@ in
           applications = [
             "cider"
             "firefox"
-            "flameshot"
             "keepassxc"
             "kitty"
             "vscodium"
