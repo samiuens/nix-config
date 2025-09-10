@@ -59,6 +59,7 @@ in
     caelestia-qml-plugin
     ddcutil
     brightnessctl
+    wireplumber
     lm_sensors
     wl-clipboard
     trash-cli

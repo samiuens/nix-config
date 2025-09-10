@@ -43,14 +43,16 @@
       bindl = , XF86MonBrightnessDown, global, caelestia:brightnessDown
 
       # Media
-      bindl = Ctrl+Super, Space, global, caelestia:mediaToggle
       bindl = , XF86AudioPlay, global, caelestia:mediaToggle
       bindl = , XF86AudioPause, global, caelestia:mediaToggle
-      bindl = Ctrl+Super, Equal, global, caelestia:mediaNext
       bindl = , XF86AudioNext, global, caelestia:mediaNext
-      bindl = Ctrl+Super, Minus, global, caelestia:mediaPrev
       bindl = , XF86AudioPrev, global, caelestia:mediaPrev
       bindl = , XF86AudioStop, global, caelestia:mediaStop
+
+      # Volume
+      bindl = , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+      bindle = , XF86AudioRaiseVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ $volumeStep%+
+      bindle = , XF86AudioLowerVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume @DEFAULT_AUDIO_SINK@ $volumeStep%-
     '';
   };
 }
