@@ -8,6 +8,7 @@
 }:
 let
   moduleHelper = import ../../lib/homeModuleHelper.nix;
+
   # Module imports
   applicationModules = moduleHelper {
     moduleConfig = userOptions.applications;
@@ -24,14 +25,11 @@ let
     configDir = ./services;
     username = userName;
   };
+  desktopGuiModules =
+    if pkgs.stdenv.isLinux then map (name: ./gui/${name}/default.nix) hostConfig.desktopGui else [ ];
 in
 {
-  imports =
-    [ ]
-    ++ applicationModules
-    ++ configurationModules
-    ++ serviceModules
-    ++ (if pkgs.stdenv.isLinux then [ ./gui/${hostConfig.desktopGui} ] else [ ]);
+  imports = applicationModules ++ configurationModules ++ serviceModules ++ desktopGuiModules;
 
   home = {
     username = userName;

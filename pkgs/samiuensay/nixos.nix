@@ -13,6 +13,8 @@ shared-packages
   bitwarden
 
   # C
+  code-cursor
+
   # D
   # E
 

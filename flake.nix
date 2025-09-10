@@ -14,6 +14,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland.url = "github:hyprwm/Hyprland";
+
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
     nix4vscode = {
@@ -25,6 +27,17 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    caelestia-cli = {
+      url = "github:caelestia-dots/cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.caelestia-shell.follows = "";
+    };
   };
 
   outputs =
@@ -33,9 +46,12 @@
       nixpkgs,
       nix-darwin,
       home-manager,
+      hyprland,
       nix-homebrew,
       nix4vscode,
       zen-browser,
+      quickshell,
+      caelestia-cli,
     }:
     let
       config = import ./configuration.nix;

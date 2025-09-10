@@ -16,6 +16,11 @@
           "yzhang.markdown-all-in-one"
           "jnoortheen.nix-ide"
           "opentofu.vscode-opentofu"
+          "ms-vscode.cmake-tools"
+          "theqtcompany.qt-core"
+          "theqtcompany.qt-qml"
+          "theqtcompany.qt-cpp"
+          "theqtcompany.qt-ui"
         ];
 
         userSettings = {

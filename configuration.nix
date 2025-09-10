@@ -5,6 +5,7 @@ let
       coreModules = [
         "audio"
         "boot"
+        "hardware"
         "locale"
         "networking"
         "nix"
@@ -99,7 +100,10 @@ in
       dualBoot = true;
       timeZone = defaults.timeZone;
 
-      desktopGui = "gnome";
+      desktopGui = [
+        "hyprland"
+        "gnome"
+      ];
 
       # Systemwide
       coreModules = defaults.nixos.coreModules;
@@ -125,7 +129,6 @@ in
           applications = [
             "cider"
             "firefox"
-            "flameshot"
             "keepassxc"
             "kitty"
             "vscodium"
