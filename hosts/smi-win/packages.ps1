@@ -40,7 +40,6 @@ $packages = @(
 
     # M
     "Mozilla.Firefox",
-    "MullvadVPN.MullvadVPN",
     "Microsoft.PowerToys",
 
     # N
