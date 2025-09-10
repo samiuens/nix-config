@@ -4,6 +4,7 @@ let
     "animations"
     "cursor"
     "decoration"
+    "exec"
     "general"
     "input"
     "keybinds"
