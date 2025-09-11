@@ -89,7 +89,8 @@
                     "style": "diamond",
                     "properties": {
                         "nixos": "\ue843",
-                        "darwin": "\ue711"
+                        "darwin": "\ue711",
+                        "windows": "\ue62a"
                     },
                     "template": "{{ .Icon }}",
                     "type": "os"

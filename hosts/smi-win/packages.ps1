@@ -13,7 +13,6 @@ $packages = @(
 
     # D
     "Discord.Discord",
-    "Docker.DockerDesktop",
     
     # E
     "EpicGames.EpicGamesLauncher",
@@ -30,16 +29,17 @@ $packages = @(
     "IrfanSkiljan.IrfanView",
     
     # J
+    "JanDeDobbeleer.OhMyPosh",
 
     # K
     "KeePassXCTeam.KeePassXC",
 
     # L
     "Logitech.GHUB",
+    "LocalSend.LocalSend",
 
     # M
     "Mozilla.Firefox",
-    "MullvadVPN.MullvadVPN",
     "Microsoft.PowerToys",
 
     # N
@@ -53,6 +53,7 @@ $packages = @(
     # Q
 
     # R
+    "RamenSoftware.Windhawk",
     "RevoUninstaller.RevoUninstaller",
     "RiotGames.Valorant.EU",
     "RustDesk.RustDesk",
@@ -60,6 +61,7 @@ $packages = @(
 
     # S
     "Safing.Portmaster",
+    "Spotify.Spotify",
 
     # T
     "Tailscale.Tailscale",
@@ -83,21 +85,22 @@ $packages = @(
 $manual_packages = @(
     'Corsair iCUE 5',
     'Drawboard (PDF)',
-    'Discord',
+    'Docker Desktop',
     'FanControl',
     'Medal',
     'Samsung Magician',
     'Syncthing',
-    'Spicetify',
     'VirtualBox Extension Pack'
     'Office 365'
 )
+
+$installedPackages = winget list | ForEach-Object { $_.ToString() }
 
 foreach ($pkg in $packages) {
     Write-Host "`n> installing package: $pkg" -ForegroundColor Cyan
 
     # Check if package is already installed via winget
-    $installed = winget list --id $pkg 2>$null
+    $isInstalled = $installedPackages -match $pkg
     if ($isInstalled) {
         Write-Host "> $pkg already installed; skipping to the next package." -ForegroundColor Red
     } else {
@@ -107,3 +110,5 @@ foreach ($pkg in $packages) {
 
 # Display a list of applications which have to be installed manually
 Write-Host "`n> manual install: $($manual_packages -join ', ')" -ForegroundColor Green
+
+Pause
