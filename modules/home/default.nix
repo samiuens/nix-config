@@ -29,7 +29,13 @@ let
     if pkgs.stdenv.isLinux then map (name: ./gui/${name}/default.nix) hostConfig.desktopGui else [ ];
 in
 {
-  imports = applicationModules ++ configurationModules ++ serviceModules ++ desktopGuiModules;
+  imports = [
+    ./gui/wallpapers.nix
+  ]
+  ++ applicationModules
+  ++ configurationModules
+  ++ serviceModules
+  ++ desktopGuiModules;
 
   home = {
     username = userName;
