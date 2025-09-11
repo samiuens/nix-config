@@ -5,22 +5,8 @@
   ...
 }:
 let
-  /*
-    caelestia-shell = pkgs.callPackage ../caelestia/nix {
-      rev = "idk";
-      stdenv = pkgs.clangStdenv;
-      quickshell = inputs.quickshell.packages.${pkgs.system}.default.override {
-        withX11 = false;
-        withI3 = false;
-      };
-      app2unit = pkgs.callPackage ../caelestia/nix/app2unit.nix { inherit pkgs; };
-      caelestia-cli = inputs.caelestia-cli.packages.${pkgs.system}.default;
-    };
-  */
-
-  # Separates QML Plugin für lokale Entwicklung
   caelestia-qml-plugin = pkgs.stdenv.mkDerivation {
-    name = "caelestia-qml-plugin-local";
+    name = "caelestia-qml-plugin";
     src = ../caelestia;
 
     nativeBuildInputs = with pkgs; [
@@ -30,14 +16,10 @@ let
     ];
 
     buildInputs = with pkgs; [
-      qt6.qtbase
-      qt6.qtdeclarative
       qt6.qtmultimedia
-      libqalculate
       aubio
     ];
 
-    # Deaktiviere Qt App Wrapping für Plugin/Library
     dontWrapQtApps = true;
 
     cmakeFlags = [
@@ -55,8 +37,33 @@ let
 in
 {
   home.packages = with pkgs; [
+    # Quickshell
     quickshell
     caelestia-qml-plugin
+    #caelestia-shell
+    inputs.caelestia-cli.packages.${pkgs.system}.default
+
+    # UI
+    qt6.qt5compat
+    qt6.qtbase
+    qt6.qtquick3d
+    qt6.qtwayland
+    qt6.qtdeclarative
+    qt6.qtsvg
+    /*
+      glib
+      adwaita-qt6
+      adwaita-fonts
+      adwaita-icon-theme
+    */
+
+    # GUI Applications
+    nautilus
+    loupe
+    gnome-calculator
+    file-roller
+
+    # Utils
     ddcutil
     brightnessctl
     wireplumber
@@ -64,8 +71,6 @@ in
     wl-clipboard
     trash-cli
     app2unit
-    #caelestia-shell
-    inputs.caelestia-cli.packages.${pkgs.system}.default
   ];
 
   home.sessionVariables = {
