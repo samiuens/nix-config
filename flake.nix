@@ -18,6 +18,11 @@
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix4vscode = {
       url = "github:nix-community/nix4vscode";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -48,6 +53,7 @@
       home-manager,
       hyprland,
       nix-homebrew,
+      lanzaboote,
       nix4vscode,
       zen-browser,
       quickshell,

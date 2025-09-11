@@ -97,13 +97,15 @@ in
 
     "smi-nixos" = {
       platform = "x86_64-linux";
-      dualBoot = true;
       timeZone = defaults.timeZone;
 
-      desktopGui = [
-        "hyprland"
-        "gnome"
+      options = [
+        "luks"
+        "secureboot"
+        "dualboot"
       ];
+
+      desktopGui = [ "hyprland" ];
 
       # Systemwide
       coreModules = defaults.nixos.coreModules;
@@ -115,7 +117,6 @@ in
         "tailscale"
         "localsend"
       ];
-
       virtualisation = [
         "docker"
         "podman"
