@@ -15,7 +15,7 @@ RowLayout {
         Layout.fillWidth: true
         spacing: Appearance.spacing.normal
 
-        StyledRect {
+        /*StyledRect {
             Layout.fillWidth: true
             implicitHeight: weather.implicitHeight
 
@@ -28,9 +28,9 @@ RowLayout {
 
                 rootHeight: root.height
             }
-        }
+        }*/
 
-        StyledRect {
+        /*StyledRect {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
@@ -38,9 +38,9 @@ RowLayout {
             color: Colours.tPalette.m3surfaceContainer
 
             Fetch {}
-        }
+        }*/
 
-        StyledClippingRect {
+        /*StyledClippingRect {
             Layout.fillWidth: true
             implicitHeight: media.implicitHeight
 
@@ -53,7 +53,7 @@ RowLayout {
 
                 lock: root.lock
             }
-        }
+        }*/
     }
 
     Center {
@@ -64,7 +64,7 @@ RowLayout {
         Layout.fillWidth: true
         spacing: Appearance.spacing.normal
 
-        StyledRect {
+        /*StyledRect {
             Layout.fillWidth: true
             implicitHeight: resources.implicitHeight
 
@@ -75,9 +75,9 @@ RowLayout {
             Resources {
                 id: resources
             }
-        }
+        }*/
 
-        StyledRect {
+        /*StyledRect {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
@@ -88,6 +88,6 @@ RowLayout {
             NotifDock {
                 lock: root.lock
             }
-        }
+        }*/
     }
 }

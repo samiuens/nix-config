@@ -229,20 +229,20 @@ ColumnLayout {
             readonly property string msg: {
                 if (Hypr.kbLayout !== Hypr.defaultKbLayout) {
                     if (Hypr.capsLock && Hypr.numLock)
-                        return qsTr("Caps lock and Num lock are ON.\nKeyboard layout: %1").arg(Hypr.kbLayoutFull);
+                        return qsTr("Caps Lock & Num Lock is enabled.\nKeyboard Layout: %1").arg(Hypr.kbLayoutFull);
                     if (Hypr.capsLock)
-                        return qsTr("Caps lock is ON. Kb layout: %1").arg(Hypr.kbLayoutFull);
+                        return qsTr("Caps Lock is enabled.\nKeyboard Layout: %1").arg(Hypr.kbLayoutFull);
                     if (Hypr.numLock)
-                        return qsTr("Num lock is ON. Kb layout: %1").arg(Hypr.kbLayoutFull);
-                    return qsTr("Keyboard layout: %1").arg(Hypr.kbLayoutFull);
+                        return qsTr("Caps Lock & Num Lock is enabled.\nKeyboard Layout: %1").arg(Hypr.kbLayoutFull);
+                    return qsTr("Keyboard Layout: %1").arg(Hypr.kbLayoutFull);
                 }
 
                 if (Hypr.capsLock && Hypr.numLock)
-                    return qsTr("Caps lock and Num lock are ON.");
+                    return qsTr("Caps Lock & Num Lock is enabled.");
                 if (Hypr.capsLock)
-                    return qsTr("Caps lock is ON.");
+                    return qsTr("Caps Lock is enabled.");
                 if (Hypr.numLock)
-                    return qsTr("Num lock is ON.");
+                    return qsTr("Num Lock is enabled.");
 
                 return "";
             }
