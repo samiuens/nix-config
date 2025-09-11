@@ -4,17 +4,20 @@ let
     "animations"
     "cursor"
     "decoration"
+    "env"
     "exec"
     "general"
+    "gtk"
     "input"
     "keybinds"
     "misc"
     "monitor"
-    "variables"
+    "rules"
   ];
   pluginNames = [
     "caelestia"
     "hypridle"
+    "keyring"
   ];
   configImports = map (name: ./config/${name}.nix) configNames;
   pluginImports = map (name: ./plugins/${name}.nix) pluginNames;
