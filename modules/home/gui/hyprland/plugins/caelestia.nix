@@ -57,6 +57,10 @@ in
       adwaita-icon-theme
     */
 
+    # Fonts
+    noto-fonts
+    adwaita-fonts
+
     # GUI Applications
     nautilus
     loupe
