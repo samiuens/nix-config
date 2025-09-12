@@ -7,7 +7,7 @@ This repository contains the nix configuration, to automate the setup of my loca
 |  hostname   |            system            |         cpu         |  ram  |         gpu          | role  |  os   | status |
 | :---------: | :--------------------------: | :-----------------: | :---: | :------------------: | :---: | :---: | :----: |
 | `smi-nixos` |   [Prime B550M-A (Wi-Fi)]    | [AMD Ryzen 7 2700X] | 32GB  | [XFX Radeon RX 6600] |   🖥️   |   ❄️   |   ✅    |
-| `smi-win` |   ⤴️    | ⤴️ | ⤴️  | ⤴️ |   🖥️   |   🪟   |   ✅    |
+|  `smi-win`  |              ⤴️               |          ⤴️          |   ⤴️   |          ⤴️           |   🖥️   |   🪟   |   ✅    |
 |  `smi-mac`  | [MacBook Pro M1 (13", 2020)] |      Apple M1       |  8GB  |       Apple M1       |   💻   |   🍏   |   ✅    |
 
 ## 📘 Overview
