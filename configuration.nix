@@ -28,7 +28,7 @@ let
     macos = {
       coreModules = [
         "brew"
-        "fonts"
+        #"fonts" # Broken, at the moment
         "nix"
         "overlays"
         "pkgs"
