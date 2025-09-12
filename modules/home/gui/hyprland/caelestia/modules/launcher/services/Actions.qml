@@ -29,7 +29,7 @@ Searcher {
                 root.autocomplete(list, "wallpaper");
             }
         },
-        Action {
+        /*Action {
             name: qsTr("Variant")
             desc: qsTr("Change the current scheme variant")
             icon: "colors"
@@ -58,7 +58,7 @@ Searcher {
                 Quickshell.execDetached(["caelestia", "wallpaper", "-r"]);
             }
         },
-        /*Action {
+        Action {
             name: qsTr("Light")
             desc: qsTr("Change the scheme to light mode")
             icon: "light_mode"

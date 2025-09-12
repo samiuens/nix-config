@@ -40,7 +40,7 @@ StyledListView {
         const text = search.text;
         const prefix = Config.launcher.actionPrefix;
         if (text.startsWith(prefix)) {
-            for (const action of ["scheme", "variant"])
+            for (const action of ["scheme"])
                 if (text.startsWith(`${prefix}${action} `))
                     return action;
 
@@ -51,7 +51,7 @@ StyledListView {
     }
 
     onStateChanged: {
-        if (state === "scheme" || state === "variant")
+        if (state === "scheme")
             Schemes.reload();
     }
 
@@ -70,14 +70,6 @@ StyledListView {
             PropertyChanges {
                 model.values: Actions.query(search.text)
                 root.delegate: actionItem
-            }
-        },
-        State {
-            name: "calc"
-
-            PropertyChanges {
-                model.values: [0]
-                root.delegate: calcItem
             }
         },
         State {

@@ -9,16 +9,10 @@ Searcher {
     id: root
 
     function launch(entry: DesktopEntry): void {
-        if (entry.runInTerminal)
-            Quickshell.execDetached({
-                command: ["app2unit", "--", ...Config.general.apps.terminal, `${Quickshell.shellDir}/assets/wrap_term_launch.sh`, ...entry.command],
-                workingDirectory: entry.workingDirectory
-            });
-        else
-            Quickshell.execDetached({
-                command: ["app2unit", "--", ...entry.command],
-                workingDirectory: entry.workingDirectory
-            });
+        Quickshell.execDetached({
+            command: ["app2unit", "--", ...entry.command],
+            workingDirectory: entry.workingDirectory
+        });
     }
 
     function search(search: string): list<var> {

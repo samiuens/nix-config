@@ -227,23 +227,12 @@ ColumnLayout {
             id: stateMessage
 
             readonly property string msg: {
-                if (Hypr.kbLayout !== Hypr.defaultKbLayout) {
-                    if (Hypr.capsLock && Hypr.numLock)
-                        return qsTr("Caps Lock & Num Lock is enabled.\nKeyboard Layout: %1").arg(Hypr.kbLayoutFull);
-                    if (Hypr.capsLock)
-                        return qsTr("Caps Lock is enabled.\nKeyboard Layout: %1").arg(Hypr.kbLayoutFull);
-                    if (Hypr.numLock)
-                        return qsTr("Caps Lock & Num Lock is enabled.\nKeyboard Layout: %1").arg(Hypr.kbLayoutFull);
-                    return qsTr("Keyboard Layout: %1").arg(Hypr.kbLayoutFull);
-                }
-
                 if (Hypr.capsLock && Hypr.numLock)
                     return qsTr("Caps Lock & Num Lock is enabled.");
                 if (Hypr.capsLock)
                     return qsTr("Caps Lock is enabled.");
                 if (Hypr.numLock)
                     return qsTr("Num Lock is enabled.");
-
                 return "";
             }
 
