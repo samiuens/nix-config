@@ -110,7 +110,6 @@ in
       # Systemwide
       coreModules = defaults.nixos.coreModules;
       systemApplications = [
-        "onepassword"
         "coolercontrol"
       ];
       systemServices = [
@@ -132,6 +131,7 @@ in
             "firefox"
             "keepassxc"
             "kitty"
+            "qmk"
             "vscodium"
             "zen-browser"
           ];
