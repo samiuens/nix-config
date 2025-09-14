@@ -9,15 +9,15 @@ let
     moduleName:
     let
       moduleDir = "${configDir}/${moduleName}";
-      sharedConfig = "${moduleDir}/shared.nix";
       userConfig = "${moduleDir}/${username}.nix";
-      sharedExists = builtins.pathExists sharedConfig;
       userExists = builtins.pathExists userConfig;
+      sharedConfig = "${moduleDir}/shared.nix";
+      sharedExists = builtins.pathExists sharedConfig;
     in
-    if sharedExists then
-      import sharedConfig
-    else if userExists then
+    if userExists then
       import userConfig
+    else if sharedExists then
+      import sharedConfig
     else
       builtins.trace "WARN: No configuration file found for '${moduleName}' in directory '${moduleDir}'." null;
 
