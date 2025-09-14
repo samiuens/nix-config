@@ -127,7 +127,6 @@ in
           description = "Sami Arda Ünsay";
           sudoPermission = true;
           applications = [
-            "cider"
             "firefox"
             "keepassxc"
             "kitty"
