@@ -131,6 +131,7 @@ in
             "firefox"
             "keepassxc"
             "kitty"
+            "nodejs"
             "qmk"
             "vscodium"
             "zen-browser"
