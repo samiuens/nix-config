@@ -50,16 +50,9 @@ in
     qt6.qtwayland
     qt6.qtdeclarative
     qt6.qtsvg
-    /*
-      glib
-      adwaita-qt6
-      adwaita-fonts
-      adwaita-icon-theme
-    */
 
     # Fonts
     noto-fonts
-    adwaita-fonts
 
     # GUI Applications
     nautilus

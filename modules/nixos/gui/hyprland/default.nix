@@ -15,4 +15,10 @@
     enable = true;
     wayland = true;
   };
+
+  services.udisks2.enable = true;
+
+  fonts.packages = with pkgs; [
+    adwaita-fonts
+  ];
 }
