@@ -7,10 +7,7 @@ in
 shared-packages
 ++ [
   # A
-
   # B
-  bitwarden
-
   # C
   # D
   # E

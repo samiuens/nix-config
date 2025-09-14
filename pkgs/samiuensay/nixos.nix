@@ -7,20 +7,11 @@ in
 shared-packages
 ++ [
   # A
-  # anki
-
   # B
-  bitwarden
-
   # C
-  code-cursor
-
   # D
   # E
-
   # F
-  filen-desktop
-
   # G
   # H
   # I
@@ -29,10 +20,7 @@ shared-packages
   # L
   # M
   # N
-
   # O
-  obsidian
-
   # P
   # Q
   # R
@@ -47,5 +35,4 @@ shared-packages
   yubioath-flutter
 
   # Z
-  zettlr
 ]

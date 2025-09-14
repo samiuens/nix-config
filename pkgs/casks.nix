@@ -1,6 +1,4 @@
 _: [
-  "1password"
-
   # A
   "aldente"
   "anki"
@@ -16,7 +14,6 @@ _: [
   # E
 
   # F
-  "firefox"
   "filen"
 
   # G
@@ -34,7 +31,6 @@ _: [
   "microsoft-powerpoint"
 
   # N
-  "nextcloud"
 
   # O
   "obsidian"

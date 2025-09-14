@@ -67,16 +67,24 @@ in
           description = "Sami Arda Ünsay";
           applications = [
             "aerospace"
-            "firefox"
+            "drawio"
+            "gitkraken"
+            "idea"
             "keepassxc"
             "kitty"
-            "linearmouse"
+            "neovim"
+            "nodejs"
+            "opentofu"
+            "qmk"
             "vscodium"
+            "zen-browser"
+            "zotero"
           ];
           configurations = [
-            "zsh"
             "git"
+            "linearmouse"
             "ssh"
+            "zsh"
           ];
           services = [ "syncthing" ];
         };
@@ -84,12 +92,19 @@ in
           description = "samiarda (Work)";
           applications = [
             "aerospace"
-            "firefox"
+            "cursor"
+            "datagrip"
+            "gitkraken"
             "kitty"
-            "linearmouse"
-            "vscodium"
+            "neovim"
+            "nodejs"
+            "opentofu"
           ];
-          configurations = [ "zsh" ];
+          configurations = [
+            "git"
+            "linearmouse"
+            "zsh"
+          ];
           services = [ ];
         };
       };
@@ -127,18 +142,25 @@ in
           description = "Sami Arda Ünsay";
           sudoPermission = true;
           applications = [
-            "firefox"
+            "drawio"
+            "gitkraken"
+            "idea"
             "keepassxc"
             "kitty"
+            "neovim"
             "nodejs"
+            "obsidian"
+            "opentofu"
             "qmk"
             "vscodium"
             "zen-browser"
+            "zettlr"
+            "zotero"
           ];
           configurations = [
-            "zsh"
             "git"
             "ssh"
+            "zsh"
           ];
           services = [
             "syncthing"
@@ -149,11 +171,18 @@ in
           sudoPermission = false;
           applications = [
             "chromium"
+            "cursor"
+            "datagrip"
+            "gitkraken"
             "kitty"
+            "neovim"
+            "nodejs"
+            "opentofu"
+            "signal"
           ];
           configurations = [
-            "zsh"
             "git"
+            "zsh"
           ];
           services = [ ];
         };
