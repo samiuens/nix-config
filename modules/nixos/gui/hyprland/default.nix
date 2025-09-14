@@ -14,6 +14,11 @@
   services.displayManager.gdm = {
     enable = true;
     wayland = true;
+    settings = {
+      greeter = {
+        includeAll = true;
+      };
+    };
   };
 
   services.udisks2.enable = true;
