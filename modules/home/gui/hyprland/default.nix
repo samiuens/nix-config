@@ -18,6 +18,7 @@ let
     "caelestia"
     "hypridle"
     "keyring"
+    "udiskie"
   ];
   configImports = map (name: ./config/${name}.nix) configNames;
   pluginImports = map (name: ./plugins/${name}.nix) pluginNames;
