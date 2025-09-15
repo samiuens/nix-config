@@ -60,7 +60,6 @@
       caelestia-cli,
     }:
     let
-      config = import ./configuration.nix;
       nixHostNames = [
         "smi-nixos"
       ];
@@ -73,7 +72,7 @@
           specialArgs = {
             inherit inputs;
             hostname = name;
-            hostConfig = config.hosts."${name}";
+            hostConfig = import ./hosts/${name}/configuration.nix;
           };
           modules = [ ./modules/nixos ];
         };
@@ -83,7 +82,7 @@
           specialArgs = {
             inherit inputs;
             hostname = name;
-            hostConfig = config.hosts."${name}";
+            hostConfig = import ./hosts/${name}/configuration.nix;
           };
           modules = [ ./modules/macos ];
         };
