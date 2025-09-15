@@ -1,14 +1,17 @@
 {
   inputs,
   pkgs,
+  lib,
   hostname,
+  hostConfig,
   ...
 }:
 {
   imports = [
-    inputs.zen-browser.homeModules.twilight
-    ./mime.nix
-  ];
+    inputs.zen-browser.homeModules.beta
+  ]
+  ++ lib.optional (hostConfig.platform == "x86_64-linux") ./mime.nix;
+
   programs.zen-browser = {
     enable = true;
 
