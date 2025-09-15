@@ -6,15 +6,20 @@
   hostConfig,
   ...
 }:
+let
+  userHelpers = import ../../../lib/userHelpers.nix { inherit lib; };
+  userConfigs = userHelpers.createUserConfigs hostConfig.users;
+  primarySudoUser = userHelpers.getPrimarySudoUser hostConfig.users;
+in
 {
   users.users = builtins.mapAttrs (userName: userOptions: {
     isHidden = false;
-    description = userOptions.description;
+    description = userOptions.nickname;
     home = "/Users/${userName}";
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
-  }) hostConfig.users;
-  system.primaryUser = "samiuensay";
+  }) userConfigs;
+  system.primaryUser = primarySudoUser;
 
   home-manager = {
     useGlobalPkgs = true;
@@ -31,7 +36,7 @@
           userOptions
           ;
       }
-    ) hostConfig.users;
+    ) userConfigs;
 
     extraSpecialArgs = {
       inherit

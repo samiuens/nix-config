@@ -1,4 +1,8 @@
-{ hostConfig, ... }:
+{ hostConfig, lib, ... }:
+let
+  userHelpers = import ../../../lib/userHelpers.nix { inherit lib; };
+  sudoUsers = userHelpers.getSudoUsers hostConfig.users;
+in
 {
   nix = {
     enable = true;
@@ -6,7 +10,7 @@
       experimental-features = nix-command flakes
     '';
     settings = {
-      trusted-users = builtins.attrNames hostConfig.users;
+      trusted-users = sudoUsers;
 
       # Hyprland Cachix
       substituters = [ "https://hyprland.cachix.org" ];

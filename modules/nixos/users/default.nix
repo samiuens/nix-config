@@ -6,19 +6,30 @@
   hostConfig,
   ...
 }:
+let
+  userHelpers = import ../../../lib/userHelpers.nix { inherit lib; };
+
+  userConfigs = builtins.mapAttrs (
+    userName: userOptions:
+    userOptions
+    // {
+      applications = userHelpers.getUserApplicationsWithHostOverrides userName hostConfig;
+    }
+  ) (userHelpers.createUserConfigs hostConfig.users);
+in
 {
   users.users = builtins.mapAttrs (userName: userOptions: {
     isNormalUser = true;
-    description = userOptions.description;
+    description = userOptions.nickname;
     home = "/home/${userName}";
     extraGroups = [
       "networkmanager"
     ]
-    ++ lib.lists.optional (builtins.elem "docker" hostConfig.virtualisation) "docker"
-    ++ lib.optionals userOptions.sudoPermission [ "wheel" ];
+    ++ lib.optionals (userOptions.type == "sudo") [ "wheel" ]
+    ++ lib.lists.optional (builtins.elem "docker" hostConfig.virtualisation) "docker";
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
-  }) hostConfig.users;
+  }) userConfigs;
 
   home-manager = {
     useGlobalPkgs = true;
@@ -35,7 +46,7 @@
           userOptions
           ;
       }
-    ) hostConfig.users;
+    ) userConfigs;
 
     extraSpecialArgs = {
       inherit

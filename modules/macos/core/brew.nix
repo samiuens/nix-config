@@ -1,4 +1,8 @@
 { hostConfig, pkgs, ... }:
+let
+  userHelpers = import ../../../lib/userHelpers.nix { inherit lib; };
+  primarySudoUser = userHelpers.getPrimarySudoUser hostConfig.users;
+in
 {
   # Disable homebrew telemetry
   environment.variables.HOMEBREW_NO_ANALYTICS = "1";
@@ -22,7 +26,7 @@
   nix-homebrew = {
     enable = true;
     enableRosetta = if (hostConfig.platform == "aarch64-darwin") then true else false;
-    user = "samiuensay";
+    user = primarySudoUser;
     autoMigrate = true;
     mutableTaps = true;
   };
