@@ -5,43 +5,16 @@
   ...
 }:
 let
-  caelestia-qml-plugin = pkgs.stdenv.mkDerivation {
-    name = "caelestia-qml-plugin";
-    src = ../caelestia;
-
-    nativeBuildInputs = with pkgs; [
-      cmake
-      ninja
-      pkg-config
-    ];
-
-    buildInputs = with pkgs; [
-      qt6.qtmultimedia
-      aubio
-    ];
-
-    dontWrapQtApps = true;
-
-    cmakeFlags = [
-      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-      "-DENABLE_MODULES=plugin"
-      "-DINSTALL_QMLDIR=${placeholder "out"}/lib/qt6/qml"
-      "-DVERSION=1.0.0"
-      "-DGIT_REVISION=local"
-    ];
-
-    meta = {
-      description = "Caelestia QML Plugin";
-    };
-  };
+  caelestia-qml-plugin = inputs.caelestia.packages.${pkgs.system}.default;
+  caelestia-cli = inputs.caelestia.packages.${pkgs.system}.cli;
 in
 {
   home.packages = with pkgs; [
+    caelestia-qml-plugin
+    caelestia-cli
+
     # Quickshell
     quickshell
-    caelestia-qml-plugin
-    #caelestia-shell
-    inputs.caelestia-cli.packages.${pkgs.system}.default
 
     # UI
     qt6.qt5compat
@@ -75,7 +48,7 @@ in
   };
 
   home.file = {
-    ".config/quickshell".source = ../caelestia;
+    ".config/quickshell".source = inputs.caelestia;
   };
 
   wayland.windowManager.hyprland = {

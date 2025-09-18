@@ -33,15 +33,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    caelestia = {
+      url = "path:/home/samiuensay/Development/caelestia";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    caelestia-cli = {
-      url = "github:caelestia-dots/cli";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.caelestia-shell.follows = "";
     };
   };
 
@@ -56,8 +50,7 @@
       lanzaboote,
       nix4vscode,
       zen-browser,
-      quickshell,
-      caelestia-cli,
+      caelestia,
     }:
     let
       nixHostNames = [
