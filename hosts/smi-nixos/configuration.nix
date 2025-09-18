@@ -22,6 +22,7 @@ in
       "zettlr"
     ];
     "samiarda" = [
+      "bitwarden"
       "chromium"
       "signal"
     ];
