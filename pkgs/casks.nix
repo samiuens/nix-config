@@ -31,10 +31,7 @@ _: [
   "microsoft-powerpoint"
 
   # N
-
   # O
-  "obsidian"
-
   # P
   # Q
 

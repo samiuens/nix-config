@@ -1,4 +1,9 @@
-{ hostConfig, pkgs, ... }:
+{
+  hostConfig,
+  lib,
+  pkgs,
+  ...
+}:
 let
   userHelpers = import ../../../lib/userHelpers.nix { inherit lib; };
   primarySudoUser = userHelpers.getPrimarySudoUser hostConfig.users;
