@@ -8,7 +8,13 @@
 }:
 let
   userHelpers = import ../../../lib/userHelpers.nix { inherit lib; };
-  userConfigs = userHelpers.createUserConfigs hostConfig.users;
+  userConfigs = builtins.mapAttrs (
+    userName: userOptions:
+    userOptions
+    // {
+      applications = userHelpers.getUserApplicationsWithHostOverrides userName hostConfig;
+    }
+  ) (userHelpers.createUserConfigs hostConfig.users);
   primarySudoUser = userHelpers.getPrimarySudoUser hostConfig.users;
 in
 {
